@@ -27,7 +27,16 @@ if __name__ == "__main__":
 		sys.stdout.flush()
 		exit(2)
 
+	nick = None
+	while not nick:
+		nick = input("Digite seu nick: ")
+	print("Olá, {}, diz ai mano. ".format(nick))
+	print("")
+
 	while True:
+		prompt = "{}>".format(nick)
+		print(prompt)
+		msg = None
 		read_buffers = [sys.stdin, main_socket]
 		try:
 			read_list, write_list, error_list = select.select(read_buffers, [], [])
@@ -44,8 +53,8 @@ if __name__ == "__main__":
 						exit(2)
 				else:
 					msg = sys.stdin.readline()
-					sys.stdout.write("You> " + msg)
-					sys.stdout.flush()
+					#sys.stdout.write("You> " + msg)
+					#sys.stdout.flush()
 					main_socket.send(msg.encode())
 
 		except KeyboardInterrupt:
