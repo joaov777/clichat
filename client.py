@@ -4,6 +4,7 @@
 import select
 import socket
 import sys
+from termcolor import cprint
 
 # usage: ./client.py [PORT] [HOST]
 
@@ -20,21 +21,24 @@ if __name__ == "__main__":
 
 	try:
 		main_socket.connect(HOST)
-		sys.stdout.write("Connected to " + HOST[0] + ":" + str(HOST[1]) + '\n')
+		sys_msg = "Conectado ao {} : {}".format(HOST[0],HOST[1])
+		cprint(sys_msg,'yellow',attrs=['bold'])
+		#sys.stdout.write("Connected to " + HOST[0] + ":" + str(HOST[1]) + '\n')
 		sys.stdout.flush()
 	except:
-		sys.stdout.write("Could not connect to " + HOST[0] + ":" + str(HOST[1]) + '\n')
+		sys_msg = "Não foi possível se conectar ao {} : {}".format(HOST[0],HOST[1])
+		cprint(sys_msg,'red',attrs=['bold'])
 		sys.stdout.flush()
 		exit(2)
 
 	nick = None
 	while not nick:
 		nick = input("Digite seu nick: ")
-	print("Olá, {}. Pressione [ENTER] pra iniciar. ".format(nick))
+	cprint("Olá, {}. Pressione [ENTER] pra iniciar. ".format(nick),"white")
 	print("")
 
 	while True:
-		prompt = "{}>".format(nick)
+		prompt = "{}> ".format(nick)
 		print(prompt)
 		msg = None
 		read_buffers = [sys.stdin, main_socket]
