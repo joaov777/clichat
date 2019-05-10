@@ -5,7 +5,7 @@ import socketserver
 import sys
 import threading
 
-# usage: ./server.py [PORT] [HOST]
+# How to Run: sudo python3 server.py [PORT] [HOST]
 
 CLIENTS = []
 
