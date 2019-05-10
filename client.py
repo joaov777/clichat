@@ -37,6 +37,10 @@ if __name__ == "__main__":
 	cprint("Olá, {}. Pressione [ENTER] pra iniciar. ".format(nick),"white")
 	print("")
 
+	# manda uma mensagem de boas vindas pro server
+	send_msg = "{} entrou ".format(nick)
+	main_socket.send( send_msg.encode() )
+
 	while True:
 		prompt = "{}> ".format(nick)
 		print(prompt)
