@@ -6,7 +6,7 @@ import socket
 import sys
 from termcolor import cprint
 
-# usage: ./client.py [PORT] [HOST]
+# Howw to run: sudo python3 client.py [SERVER_PORT] [SERVER_HOST]
 
 if __name__ == "__main__":
 
