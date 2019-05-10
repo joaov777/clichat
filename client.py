@@ -30,7 +30,7 @@ if __name__ == "__main__":
 	nick = None
 	while not nick:
 		nick = input("Digite seu nick: ")
-	print("Olá, {}, diz ai mano. ".format(nick))
+	print("Olá, {}. Pressione [ENTER] pra iniciar. ".format(nick))
 	print("")
 
 	while True:
@@ -53,9 +53,10 @@ if __name__ == "__main__":
 						exit(2)
 				else:
 					msg = sys.stdin.readline()
+					send_msg = "{}{}".format(prompt, msg)
 					#sys.stdout.write("You> " + msg)
 					#sys.stdout.flush()
-					main_socket.send(msg.encode())
+					main_socket.send( send_msg.encode() )
 
 		except KeyboardInterrupt:
 			print("Disconnected from server!")
