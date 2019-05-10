@@ -35,7 +35,7 @@ if __name__ == "__main__":
 	while not nick:
 		nick = input("Digite seu nick: ")
 	cprint("Olá, {}. Pressione [ENTER] pra iniciar. ".format(nick),"white")
-	print("")
+	#print("")
 
 	# manda uma mensagem de boas vindas pro server
 	send_msg = "{} entrou ".format(nick)
