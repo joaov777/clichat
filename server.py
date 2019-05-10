@@ -23,9 +23,9 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
 		#welcomeMsg = self.client_address[0] + ":" + str(self.client_address[1]) + " joined." + '\n'
 		#sys.stdout.write(welcomeMsg)
 		#sys.stdout.flush()
-		for cli in CLIENTS:
-			if cli is not self.request:
-				cli.sendall(welcomeMsg.encode())
+		#for cli in CLIENTS:
+		#	if cli is not self.request:
+		#		cli.sendall(welcomeMsg.encode())
 		while True:
 			data = self.request.recv(4096)
 			if data:
