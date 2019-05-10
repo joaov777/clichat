@@ -30,7 +30,8 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
 			data = self.request.recv(4096)
 			if data:
 				data = data.decode()
-				sendMsg = self.client_address[0] + ":" + str(self.client_address[1]) + "> " + data
+				#sendMsg = self.client_address[0] + ":" + str(self.client_address[1]) + "> " + data
+				sendMsg = data
 				sys.stdout.write(sendMsg)
 				sys.stdout.flush()
 				for cli in CLIENTS:
