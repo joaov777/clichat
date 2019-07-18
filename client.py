@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 import select
 import socket
 import sys
-from termcolor import cprint
+
 
 # Howw to run: sudo python3 client.py [SERVER_PORT] [SERVER_HOST]
 
@@ -22,19 +21,19 @@ if __name__ == "__main__":
 	try:
 		main_socket.connect(HOST)
 		sys_msg = "Conectado ao {} : {}".format(HOST[0],HOST[1])
-		cprint(sys_msg,'yellow',attrs=['bold'])
+		#sys_msg,'yellow',attrs=['bold']
 		#sys.stdout.write("Connected to " + HOST[0] + ":" + str(HOST[1]) + '\n')
 		sys.stdout.flush()
 	except:
 		sys_msg = "Não foi possível se conectar ao {} : {}".format(HOST[0],HOST[1])
-		cprint(sys_msg,'red',attrs=['bold'])
+		#sys_msg,'red',attrs=['bold']
 		sys.stdout.flush()
 		exit(2)
 
 	nick = None
 	while not nick:
 		nick = input("Digite seu nick: ")
-	cprint("Olá, {}. Pressione [ENTER] pra iniciar. ".format(nick),"white")
+	print("Olá, {}. Pressione [ENTER] pra iniciar. ".format(nick))
 	#print("")
 
 	# manda uma mensagem de boas vindas pro server
