@@ -22,24 +22,24 @@ if __name__ == "__main__":
 
 	try:
 		main_socket.connect(HOST)
-		sys_msg = "Conectado ao {} : {}".format(HOST[0],HOST[1])
+		sys_msg = "Connected to {} : {}".format(HOST[0],HOST[1])
 		#sys_msg,'yellow',attrs=['bold']
 		#sys.stdout.write("Connected to " + HOST[0] + ":" + str(HOST[1]) + '\n')
 		sys.stdout.flush()
 	except:
-		sys_msg = "Não foi possível se conectar ao {} : {}".format(HOST[0],HOST[1])
+		sys_msg = "Unable to connect to {} : {}".format(HOST[0],HOST[1])
 		#sys_msg,'red',attrs=['bold']
 		sys.stdout.flush()
 		exit(2)
 
 	nick = None
 	while not nick:
-		nick = input("Digite seu nick: ")
-	print("Olá, {}. Pressione [ENTER] pra iniciar. ".format(nick))
+		nick = input("Choose a nick: ")
+	print("Olá, {}. Press [ENTER] to start. ".format(nick))
 	#print("")
 
 	# manda uma mensagem de boas vindas pro server
-	send_msg = "{} entrou \n".format(nick)
+	send_msg = "[[>> {} joined!! <<]]\n".format(nick)
 	main_socket.send( send_msg.encode() )
 
 	while True:
