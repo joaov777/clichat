@@ -7,7 +7,7 @@ import sys
 
 # How to run: python3 client.py [SERVER_PORT] [SERVER_HOST]
 # How to run from a remote machine: ssh [SERVER_HOST] "python3 ~/Documents/repos/clichat/client.py [SERVER_PORT] [SERVER_HOST]"
-# 
+# ssh operador@192.168.17.2 -t 'bash -ci' runclient
 
 if __name__ == "__main__":
 
