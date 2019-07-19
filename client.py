@@ -5,7 +5,9 @@ import socket
 import sys
 
 
-# Howw to run: sudo python3 client.py [SERVER_PORT] [SERVER_HOST]
+# How to run: python3 client.py [SERVER_PORT] [SERVER_HOST]
+# How to run from a remote machine: ssh [SERVER_HOST] "python3 ~/Documents/repos/clichat/client.py [SERVER_PORT] [SERVER_HOST]"
+# 
 
 if __name__ == "__main__":
 
@@ -37,12 +39,12 @@ if __name__ == "__main__":
 	#print("")
 
 	# manda uma mensagem de boas vindas pro server
-	send_msg = "{} entrou ".format(nick)
+	send_msg = "{} entrou \n".format(nick)
 	main_socket.send( send_msg.encode() )
 
 	while True:
 		prompt = "{}> ".format(nick)
-		print(prompt)
+		#print(prompt)
 		msg = None
 		read_buffers = [sys.stdin, main_socket]
 		try:
