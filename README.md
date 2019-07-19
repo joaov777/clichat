@@ -13,4 +13,8 @@ This chat is intended to be used over SSH connection solely in order to improve 
 - Make sure you have ssh properly installed.
 - Generate your keys with the script.
 - Send your keys to the server with the script.
-- 
+- Having done what is necessary above, execute the command below for quick access:
+
+```shell
+ssh operador@192.168.17.2 -t 'bash -ci' runclient
+```
