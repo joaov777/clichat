@@ -16,5 +16,10 @@ This chat is intended to be used over SSH connection solely in order to improve 
 - Having done what is necessary above, execute the command below for quick access:
 
 ```shell
+ssh <server_user>@<server_ip> -t 'bash -ci' <server.py alias on the server machine>
+```
+A more practical example would be:
+```
 ssh operador@192.168.17.2 -t 'bash -ci' runclient
 ```
+
